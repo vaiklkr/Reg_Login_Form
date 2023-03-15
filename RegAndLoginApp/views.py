@@ -11,7 +11,7 @@ def register(request):
         form = RegForm(request.POST)      #we create RegForm class object with request.POST parameter
         if form.is_valid():
             form.save(commit=True)
-            return HttpResponse("Registration Successful...!")
+            return HttpResponse("<html><head></head><body><h2>Registration Successful..!<br><a href='/login'>click here to login</a></h2></body></html>")
         else:
             print(form.errors)
     else:
